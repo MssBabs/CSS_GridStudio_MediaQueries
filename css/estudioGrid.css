@@ -1,0 +1,220 @@
+/*VARIABLES*/
+body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[6];
+      grid-template-rows: repeat(6, 1fr);
+  grid-gap: 2rem;
+  /*efectos a transformar en -> sass*/
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  background-color: black;
+      grid-template-areas: "header header header" "aside main main" "aside main main" "aside main main" "aside main main" "footer footer footer";
+}
+
+body header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: teal;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+body aside {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 1;
+  grid-area: aside;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: teal;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+body main {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: main;
+  grid-gap: 2rem;
+  background-color: teal;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-areas: "cabeceraMain cabeceraMain" "articulosMain articulosMain" "articulosMain articulosMain";
+}
+
+body main #cabeceraMain {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: cabeceraMain;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: aquamarine;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+body main #articulosMain {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: articulosMain;
+  grid-gap: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: aquamarine;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas: "articulosMain1 articulosMain1" "articulosMain2 articulosMain2";
+}
+
+body main #articulosMain #articulosMain1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: articulosMain1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: aquamarine;
+}
+
+body main #articulosMain #articulosMain2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: articulosMain2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: aquamarine;
+}
+
+body footer {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: footer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: teal;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+/*MOVIL*/
+@media only screen and (min-width: 480px) {
+  body {
+        grid-template-areas: "header header header" "aside aside aside" "main main main" "main main main" "main main main" "footer footer footer";
+  }
+  body main {
+        grid-template-areas: "cabeceraMain cabeceraMain" "articulosMain articulosMain" "articulosMain articulosMain";
+  }
+  body main #articulosMain {
+        grid-template-areas: "articulosMain1 articulosMain1" "articulosMain2 articulosMain2";
+  }
+}
+
+/*TABLETS*/
+@media only screen and (min-width: 768px) {
+  body {
+        grid-template-areas: "header header header" "aside main main" "aside main main" "aside main main"  "aside main main" "footer footer footer";
+  }
+  body main {
+        grid-template-areas: "cabeceraMain cabeceraMain" "articulosMain articulosMain" "articulosMain articulosMain";
+  }
+  body main #articulosMain {
+        grid-template-areas: "articulosMain1 articulosMain1" "articulosMain2 articulosMain2";
+  }
+}
+
+/*DESKTOP*/
+@media only screen and (min-width: 992px) {
+  body {
+        grid-template-areas: "header header header" "aside main main" "aside main main" "aside main main"  "aside main main" "footer footer footer";
+  }
+  body main {
+        grid-template-areas: "cabeceraMain cabeceraMain" "articulosMain articulosMain" "articulosMain articulosMain";
+  }
+  body main #articulosMain {
+        grid-template-areas: "articulosMain1 articulosMain2" "articulosMain1 articulosMain2";
+  }
+}
+/*# sourceMappingURL=estudioGrid.css.map */

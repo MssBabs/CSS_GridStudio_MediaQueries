@@ -1,0 +1,224 @@
+
+/*VARIABLES*/
+$fondoBody: black;
+$fondoHeader: teal;
+$fondoAside: teal;
+$fondoMain: teal;
+$fondoHeaderMain: aquamarine;
+$fondoArticulosMain: aquamarine;
+$fondoArticulo1Main: aquamarine;
+$fondoArticulo2Main: aquamarine;
+$fondoFooter: teal;
+
+$padding: 2rem;
+$border-radius: 1rem;
+$gap: 2rem;
+
+
+
+
+body /*Body == Contendor*/ {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: $gap;
+
+    /*efectos a transformar en -> sass*/
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+
+    background-color: $fondoBody;
+
+    grid-template-areas: "header header header"
+                         "aside main main"
+                         "aside main main"
+                         "aside main main"
+                         "aside main main"
+                         "footer footer footer";
+
+    header{
+        grid-area: header;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        background-color: $fondoHeader;
+        padding: $padding;
+        border-radius: $border-radius;
+    }
+
+    aside{
+        grid-area: aside;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        background-color: $fondoAside;
+        padding: $padding;
+        border-radius: $border-radius;
+    }
+
+    main{
+        grid-area: main;
+
+        grid-gap: $gap;
+
+        background-color: $fondoMain;
+        padding: $padding;
+        border-radius: $border-radius;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: "cabeceraMain cabeceraMain"
+                             "articulosMain articulosMain"
+                             "articulosMain articulosMain";
+
+        #cabeceraMain{
+            grid-area: cabeceraMain;
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        
+            background-color: $fondoHeaderMain;
+            padding: $padding;
+            border-radius: $border-radius;
+        }
+
+        #articulosMain{
+            grid-area: articulosMain;
+            grid-gap: $gap;
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        
+            background-color: $fondoArticulosMain;
+            padding: $padding;
+            border-radius: $border-radius;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas:"articulosMain1 articulosMain1"
+                                "articulosMain2 articulosMain2";
+
+            #articulosMain1{
+                grid-area: articulosMain1;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+        
+                background-color: $fondoArticulo1Main;
+            }
+        
+            #articulosMain2{
+                grid-area: articulosMain2;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+
+                background-color: $fondoArticulo2Main;
+            }
+        }
+    }
+
+    footer{
+        grid-area: footer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        background-color: $fondoFooter;
+        padding: $padding;
+        border-radius: $border-radius;
+    }   
+}
+
+
+
+
+/*MOVIL*/
+@media only screen and (min-width: 480px) {
+    body{
+        grid-template-areas: "header header header"
+                             "aside aside aside"
+                             "main main main"
+                             "main main main"
+                             "main main main"
+                             "footer footer footer";
+                        
+        main{
+            grid-template-areas: "cabeceraMain cabeceraMain"
+                                 "articulosMain articulosMain"
+                                 "articulosMain articulosMain";
+
+            #articulosMain{
+                grid-template-areas:"articulosMain1 articulosMain1"
+                                     "articulosMain2 articulosMain2";
+            }
+        }
+    }
+
+}
+
+/*TABLETS*/
+@media only screen and (min-width: 768px) {
+    body{
+        grid-template-areas: "header header header"
+                             "aside main main"
+                             "aside main main"
+                             "aside main main" 
+                             "aside main main"
+                             "footer footer footer";
+        
+        main{
+            grid-template-areas: "cabeceraMain cabeceraMain"
+                                 "articulosMain articulosMain"
+                                 "articulosMain articulosMain";
+                    
+            #articulosMain{
+                grid-template-areas:"articulosMain1 articulosMain1"
+                                     "articulosMain2 articulosMain2";
+            }
+        }
+    }
+}
+
+/*DESKTOP*/
+@media only screen and (min-width:992px) {
+    body{
+        grid-template-areas: "header header header"
+                            "aside main main"
+                            "aside main main"
+                            "aside main main" 
+                            "aside main main"
+                            "footer footer footer";
+                              
+        main{
+            grid-template-areas: "cabeceraMain cabeceraMain"
+                                 "articulosMain articulosMain"
+                                 "articulosMain articulosMain";
+
+            #articulosMain{
+                grid-template-areas:"articulosMain1 articulosMain2"
+                                     "articulosMain1 articulosMain2";
+            }
+        }
+    }
+}    
+    
